@@ -25,11 +25,11 @@
     <!-- Header -->
     <div id="header">
         <!-- Nav -->
-        <nav id="nav" class="wow fadeInDown" data-wow-delay=".1s" data-wow-duration="1s">
-
+        <!--<nav id="nav" class="wow fadeInDown" data-wow-delay=".1s" data-wow-duration="1s">-->
+        <nav id="nav">
             <div class="nav-header">在田信息技术有限公司</div>
             <ul>
-                <li><a class="smooth" href="#">首页</a> </li>
+                <li><a href="#myCarousel">首页</a> </li>
                 <li><a class="smooth" href="#service">业务</a></li>
                 <li><a class="smooth" href="#us">团队</a></li>
                 <li><a class="smooth" href="http://blog.boostfield.com/tag/an-li/">案例</a></li>
@@ -49,7 +49,7 @@
         <!--<div id="goToTop"><a href="#">Top</a></div>-->
     <!--</div>-->
     <div class="fill">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center" data-interval="5000" >
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -827,19 +827,27 @@ function showmorepeople(){
 
 </script>
 
-
-
-
-<!-- Scripts -->
-
+<!-- mycarousel scripts -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.mobile.custom.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(".carousel-inner").swiperight(function() {
+            $(this).parent().carousel('prev');
+        });
+        $(".carousel-inner").swipeleft(function() {
+            $(this).parent().carousel('next');
+        });
+    });
+</script>
+
+
+<!--scripts-->
 <script src="assets/js/jquery.dropotron.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/skel-viewport.min.js"></script>
-
-<script src="assets/js/hammer.min.js"></script>
-<script src="assets/js/jquery.hammer.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/wow.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/swiper-3.3.1.jquery.min.js"></script>
@@ -847,16 +855,7 @@ function showmorepeople(){
 <script src="assets/js/ie/respond.min.js"></script>
 <![endif]-->
 <script src="assets/js/main.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#myCarousel').hammer().on('swiperleft',function () {
-            $('#myCarousel').carousel('next');
-        })
-        $('#myCarousel').hammer().on('swiperight',function () {
-            $('#myCarousel').carousel('prev');
-        })
-    });
-</script>
+
 </body>
 </html> 
 
