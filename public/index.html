@@ -824,17 +824,21 @@ function showmorepeople(){
 
 
 }
+
 </script>
 
 
 
-</body>
+
 <!-- Scripts -->
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.dropotron.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/skel-viewport.min.js"></script>
+
+<script src="assets/js/hammer.min.js"></script>
+<script src="assets/js/jquery.hammer.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/wow.min.js"></script>
 <script src="assets/js/util.js"></script>
@@ -843,6 +847,16 @@ function showmorepeople(){
 <script src="assets/js/ie/respond.min.js"></script>
 <![endif]-->
 <script src="assets/js/main.js"></script>
-
+<script>
+    $(document).ready(function () {
+        $('#myCarousel').hammer().on('swiperleft',function () {
+            $('#myCarousel').carousel('next');
+        })
+        $('#myCarousel').hammer().on('swiperight',function () {
+            $('#myCarousel').carousel('prev');
+        })
+    });
+</script>
+</body>
 </html> 
 
